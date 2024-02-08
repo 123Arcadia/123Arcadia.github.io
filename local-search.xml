@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>hexo常用命令</title>
+    <link href="/2024/02/08/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+    <url>/2024/02/08/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<p><strong>基本命令了解</strong>：</p><ol><li><p>hexo -v            &#x2F;&#x2F;查看版本        </p></li><li><p>hexo init        &#x2F;&#x2F;初始化一个项目</p></li><li><p>cnpm install        </p></li><li><p>hexo clean        &#x2F;&#x2F;清理生成的文件</p></li><li><p>hexo g            &#x2F;&#x2F;生成静态网页文件，g是generate的缩写</p></li><li><p>hexo s            &#x2F;&#x2F;运行到服务器端，s是server的缩写</p></li><li><p>hexo d            &#x2F;&#x2F;部署到远端GitHub, d是deploy的缩写</p></li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs she">// 一行<br>hexo clean &amp; hexo g -d<br></code></pre></td></tr></table></figure><ol start="8"><li><p>hexo s -p 5000    &#x2F;&#x2F;在4000端口被占用的时候，修改指定端口</p></li><li><p>cnpm uninstall hexo-cli -g    &#x2F;&#x2F;卸载hexo</p></li><li><p>npm install hexo -g #安装Hexo</p></li><li><p>npm update hexo -g #升级   </p></li><li><p><code>hexo n &quot;标题&quot; == hexo new &quot;标题&quot;</code> #新建文章</p></li><li><p>hexo server #Hexo会监视文件变动并自动更新，无须重启服务器</p></li><li><p>hexo server -s #静态模式</p></li><li><p>hexo server -p 5000 #更改端口</p></li><li><p>hexo server -i 192.168.1.1 #自定义 IP</p></li><li><p>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令</p></li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>测试</title>
     <link href="/2024/02/08/%E6%B5%8B%E8%AF%95/"/>
     <url>/2024/02/08/%E6%B5%8B%E8%AF%95/</url>
