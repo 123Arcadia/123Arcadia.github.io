@@ -4,11 +4,24 @@
   
   
   <entry>
+    <title>hexo常用命令</title>
+    <link href="/2024/02/08/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-1/"/>
+    <url>/2024/02/08/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4-1/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>测试</title>
     <link href="/2024/02/08/%E6%B5%8B%E8%AF%95/"/>
     <url>/2024/02/08/%E6%B5%8B%E8%AF%95/</url>
     
-    <content type="html"><![CDATA[<p><strong>hello, This is thr First!</strong></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">![缅因猫](缅因猫.jpg)<br></code></pre></td></tr></table></figure><p><img src="/2024/02/08/%E6%B5%8B%E8%AF%95/%E7%BC%85%E5%9B%A0%E7%8C%AB.jpg" alt="缅因猫"></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">&#123;% asset_img 图片文件名 图片加载失败的描述 %&#125;<br></code></pre></td></tr></table></figure><img src="/2024/02/08/%E6%B5%8B%E8%AF%95/%E7%BC%85%E5%9B%A0%E7%8C%AB.jpg" class="" title="缅因猫加载失败"><ul><li>img src&#x3D;”&#x2F;img&#x2F;缅因猫.jpg” style&#x3D;”zoom:80%” &gt;</li></ul><img src="/img/缅因猫.jpg" style="zoom:80%" /> <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">![风铃-第二种引用](fengling)<br></code></pre></td></tr></table></figure><p><img src="/fengling" alt="风铃-第二种引用"></p><p><strong>例子</strong>：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">![下雨](preview)<br></code></pre></td></tr></table></figure><p><img src="/preview" alt="下雨"></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">![下雨](preview.jpg)<br></code></pre></td></tr></table></figure><p><img src="/2024/02/08/%E6%B5%8B%E8%AF%95/preview.jpg" alt="下雨"></p>]]></content>
+    <content type="html"><![CDATA[<p><strong>hello, This is thr First!</strong></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">![缅因猫](缅因猫.jpg)<br></code></pre></td></tr></table></figure><p><img src="/2024/02/08/%E6%B5%8B%E8%AF%95/%E7%BC%85%E5%9B%A0%E7%8C%AB.jpg" alt="缅因猫"></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">&#123;% asset_img 图片文件名 图片加载失败的描述 %&#125;<br>或<br>&lt;img src=&quot;https://alexcld.com/images/pengyuyan.jpg&quot; width=&quot;50%&quot; height=&quot;50%&quot; /&gt;<br></code></pre></td></tr></table></figure><img src="/2024/02/08/%E6%B5%8B%E8%AF%95/%E7%BC%85%E5%9B%A0%E7%8C%AB.jpg" class="" title="缅因猫加载失败"><p>缺点：图片就会靠在左侧，大小也不由自己决定</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">&lt;img src=&quot;/img/缅因猫.jpg&quot; style=&quot;zoom:80%&quot; /&gt; <br></code></pre></td></tr></table></figure><img src="/img/缅因猫.jpg" style="zoom:80%" /> <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">![风铃-第二种引用](fengling)<br></code></pre></td></tr></table></figure><p><img src="/fengling" alt="风铃-第二种引用"></p><p><strong>例子</strong>：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">![下雨](preview)<br></code></pre></td></tr></table></figure><p><img src="/preview" alt="下雨"></p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">![下雨](preview.jpg)<br></code></pre></td></tr></table></figure><p><img src="/2024/02/08/%E6%B5%8B%E8%AF%95/preview.jpg" alt="下雨"></p>]]></content>
     
     
     
