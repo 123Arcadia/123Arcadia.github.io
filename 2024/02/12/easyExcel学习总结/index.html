@@ -16,21 +16,25 @@
   <meta name="author" content="晨cyan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="java排查耗时代码的几种方式jstackjstack是jdk自带的堆栈跟踪工具 首先，我们用ps -ef|grep java命令列出正在运行的java进程 123# ps -ef|grep javaroot        33    32 67 21:52 tty2     00:00:10 java -jar xxx.jarroot       101    11  0 21:52 pts&#x2F;0">
+    <meta name="description" content="easyExcel 参考:https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_41958629&#x2F;article&#x2F;details&#x2F;132101993   @ExcelIgnore：默认所有字段都会和excel去匹配，加了这个注解会忽略该字段 @ExcelIgnoreUnannotated：添加玩@ExcelIgnoreUnannotated注解后，只有添加了@ExcelProperty注解的属性才会被">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java排查耗时代码">
-<meta property="og:url" content="http://123arcadia.github.io/2024/02/12/java%E6%8E%92%E6%9F%A5%E8%80%97%E6%97%B6%E4%BB%A3%E7%A0%81/index.html">
+<meta property="og:title" content="easyExcel简短总结">
+<meta property="og:url" content="http://123arcadia.github.io/2024/02/12/easyExcel%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Arcadia&#39;s Blog">
-<meta property="og:description" content="java排查耗时代码的几种方式jstackjstack是jdk自带的堆栈跟踪工具 首先，我们用ps -ef|grep java命令列出正在运行的java进程 123# ps -ef|grep javaroot        33    32 67 21:52 tty2     00:00:10 java -jar xxx.jarroot       101    11  0 21:52 pts&#x2F;0">
+<meta property="og:description" content="easyExcel 参考:https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_41958629&#x2F;article&#x2F;details&#x2F;132101993   @ExcelIgnore：默认所有字段都会和excel去匹配，加了这个注解会忽略该字段 @ExcelIgnoreUnannotated：添加玩@ExcelIgnoreUnannotated注解后，只有添加了@ExcelProperty注解的属性才会被">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://123arcadia.github.io/2024/02/12/easyExcel%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/ExcelProperty%E8%A7%A3%E9%87%8A.png">
+<meta property="og:image" content="http://123arcadia.github.io/2024/02/12/easyExcel%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E8%A1%A8%E6%A0%BCindex%E6%8C%87%E5%AE%9A%E8%A1%A8%E5%A4%B4.png">
+<meta property="og:image" content="http://123arcadia.github.io/easyExcel%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.assets/u=3539595421,754041626&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto.jpeg">
 <meta property="article:published_time" content="2024-02-12T02:39:57.000Z">
-<meta property="article:modified_time" content="2024-02-12T02:40:33.008Z">
+<meta property="article:modified_time" content="2024-02-12T14:05:52.434Z">
 <meta property="article:author" content="晨cyan">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://123arcadia.github.io/2024/02/12/easyExcel%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/ExcelProperty%E8%A7%A3%E9%87%8A.png">
   
   
   
-  <title>java排查耗时代码 - Arcadia&#39;s Blog</title>
+  <title>easyExcel简短总结 - Arcadia&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="java排查耗时代码"></span>
+            <span id="subtitle" data-typed-text="easyExcel简短总结"></span>
           
         </div>
 
@@ -219,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          405 字
+          141 字
         
       </span>
     
@@ -230,7 +234,7 @@
         
         
         
-          4 分钟
+          2 分钟
         
       </span>
     
@@ -267,31 +271,29 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">java排查耗时代码</h1>
+            <h1 id="seo-header">easyExcel简短总结</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="java排查耗时代码的几种方式"><a href="#java排查耗时代码的几种方式" class="headerlink" title="java排查耗时代码的几种方式"></a>java排查耗时代码的几种方式</h1><h3 id="jstack"><a href="#jstack" class="headerlink" title="jstack"></a>jstack</h3><p>jstack是jdk自带的堆栈跟踪工具</p>
-<p>首先，我们用<code>ps -ef|grep java</code>命令列出正在运行的java进程</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">ps -ef|grep java</span><br>root        33    32 67 21:52 tty2     00:00:10 java -jar xxx.jar<br>root       101    11  0 21:52 pts/0    00:00:00 grep --color=auto java<br></code></pre></td></tr></table></figure>
+                <h1 id="easyExcel"><a href="#easyExcel" class="headerlink" title="easyExcel"></a>easyExcel</h1><blockquote>
+<p>参考:<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41958629/article/details/132101993">https://blog.csdn.net/qq_41958629/article/details/132101993</a></p>
+</blockquote>
+<ul>
+<li><code>@ExcelIgnore</code>：默认所有字段都会和excel去匹配，加了这个注解会忽略该字段</li>
+<li><code>@ExcelIgnoreUnannotated</code>：添加玩<code>@ExcelIgnoreUnannotated</code>注解后，只有添加了<code>@ExcelProperty</code>注解的属性才会被写入Excel中。</li>
+<li><code>@ExcelProperty</code></li>
+</ul>
+<p><img src="/2024/02/12/easyExcel%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/ExcelProperty%E8%A7%A3%E9%87%8A.png" srcset="/img/loading.gif" lazyload alt="@ExcelProperty解释"></p>
+<p>使用字段名作为默认表头</p>
+<ul>
+<li>设置多个表头：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Getter</span><br><span class="hljs-meta">@Setter</span><br><span class="hljs-meta">@AllArgsConstructor</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DemoData</span> &#123;<br>    <span class="hljs-meta">@ExcelProperty(value = &#123;&quot;主题1&quot;, &quot;字符串标题&quot;&#125;, index = 0)</span><br>    <span class="hljs-keyword">private</span> String string;<br><br>    <span class="hljs-meta">@ExcelProperty(value = &#123;&quot;主题1&quot;, &quot;日期标题&quot;&#125;, index = 1)</span><br>    <span class="hljs-keyword">private</span> Date date;<br><br>    <span class="hljs-meta">@ExcelProperty(value = &#123;&quot;主题2&quot;, &quot;数字标题&quot;&#125;, index = 3)</span><br>    <span class="hljs-keyword">private</span> Double doubleData;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><code>jstack -l [pid号]</code>命令打印线程运行情况</p>
-<p><code>ps p  [pid号] -L -o pcpu,pid,tid,time,tname,cmd</code>打印出线程使用cpu的情况</p>
-<p>打印结果如下:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">jstack -l 33</span><br>Full thread dump OpenJDK 64-Bit Server VM (17.0.2+8-86 mixed mode, sharing):<br><br>Threads class SMR info:<br>_java_thread_list=0x00007f3658001890, length=12, elements=&#123;<br>0x00007f369c023f10, 0x00007f369c1739b0, ...<br>&#125;<br><br>&quot;main&quot; #1 prio=5 os_prio=0 cpu=90140.00ms elapsed=98.18s tid=0x00007f369c023f10 nid=0x22 runnable  [0x00007f36a12fe000]<br>   java.lang.Thread.State: RUNNABLE<br>        at org.rocksdb.RocksDB.get(Native Method)<br>        at org.rocksdb.RocksDB.get(RocksDB.java:1965)<br>        at org.wowtools.giscat.vector.rocksrtree.TreeTransaction.get(TreeTransaction.java:74)<br>        at org.wowtools.giscat.vector.rocksrtree.TreeBuilder.getLeaf(TreeBuilder.java:186)<br>        ...<br><br>   Locked ownable synchronizers:<br>        - None<br><br>&quot;Reference Handler&quot; #2 daemon prio=10 os_prio=0 cpu=0.00ms elapsed=97.06s tid=0x00007f369c1739b0 nid=0x29 waiting on condition  [0x00007f367955e000]<br>   java.lang.Thread.State: RUNNABLE<br>        at java.lang.ref.Reference.waitForReferencePendingList(java.base@17.0.2/Native Method)<br>        at java.lang.ref.Reference.processPendingReferences(java.base@17.0.2/Reference.java:253)<br>        at java.lang.ref.Reference$ReferenceHandler.run(java.base@17.0.2/Reference.java:215)<br><br>   Locked ownable synchronizers:<br>        - None<br><br>...<br><br></code></pre></td></tr></table></figure>
+<p><img src="/2024/02/12/easyExcel%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/%E8%A1%A8%E6%A0%BCindex%E6%8C%87%E5%AE%9A%E8%A1%A8%E5%A4%B4.png" srcset="/img/loading.gif" lazyload alt="表格index指定表头"></p>
+<p><img src="/../easyExcel%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.assets/u=3539595421,754041626&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto.jpeg" srcset="/img/loading.gif" lazyload></p>
 
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">ps p 33 -L -o pcpu,pid,tid,time,tname,cmd</span><br><span class="hljs-meta prompt_">%</span><span class="language-bash">CPU   PID   TID     TIME TTY      CMD</span><br>91.9    33    33 00:01:02 tty2     /mydata/java/jdk-17/bin/java<br>87.9    33    34 00:00:59 tty2     /mydata/java/jdk-17/bin/java<br> 0.0    33    35 00:00:00 tty2     /mydata/java/jdk-17/bin/java<br> 0.0    33    36 00:00:00 tty2     /mydata/java/jdk-17/bin/java<br> ...<br><br></code></pre></td></tr></table></figure>
-
-<p>现在我们知道了34号线程是最忙的，占了87.9%的CPU（33是主线程看不出什么内容），然后把34转为16进制：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">printf &quot;0x%x\n&quot;  34<br><span class="hljs-meta prompt_"># </span><span class="language-bash">0x22</span><br></code></pre></td></tr></table></figure>
-
-<p>最后，我们去查找<code>jstack -l</code> 33的输出里找关键字<strong>0x22</strong>:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">&quot;main&quot; #1 prio=5 os_prio=0 cpu=90140.00ms elapsed=98.18s tid=0x00007f369c023f10 nid=0x22 runnable  [0x00007f36a12fe000]<br>   java.lang.Thread.State: RUNNABLE<br>        at org.rocksdb.RocksDB.get(Native Method)<br>        at org.rocksdb.RocksDB.get(RocksDB.java:1965)<br>        at org.wowtools.giscat.vector.rocksrtree.TreeTransaction.get(TreeTransaction.java:74)<br>        at org.wowtools.giscat.vector.rocksrtree.TreeBuilder.getLeaf(TreeBuilder.java:186)<br>        ...<br><br></code></pre></td></tr></table></figure>
-
-<p>频繁地去RocksDB里get数据，导致性能过低</p>
-<hr>
-<h3 id="使用阿尔萨斯Arthas"><a href="#使用阿尔萨斯Arthas" class="headerlink" title="使用阿尔萨斯Arthas"></a>使用阿尔萨斯Arthas</h3>
                 
               </div>
             
@@ -308,8 +310,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>java排查耗时代码</div>
-      <div>http://123arcadia.github.io/2024/02/12/java排查耗时代码/</div>
+      <div>easyExcel简短总结</div>
+      <div>http://123arcadia.github.io/2024/02/12/easyExcel学习总结/</div>
     </div>
     <div class="license-meta">
       
@@ -353,9 +355,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/12/easyExcel%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" title="easyExcel简短总结">
+                      <a href="/2024/02/13/Guava%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="Guava学习记录">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">easyExcel简短总结</span>
+                        <span class="hidden-mobile">Guava学习记录</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -363,8 +365,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/08/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="hexo常用命令">
-                        <span class="hidden-mobile">hexo常用命令</span>
+                      <a href="/2024/02/12/java%E6%8E%92%E6%9F%A5%E8%80%97%E6%97%B6%E4%BB%A3%E7%A0%81/" title="java排查耗时代码">
+                        <span class="hidden-mobile">java排查耗时代码</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
