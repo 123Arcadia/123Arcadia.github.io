@@ -24,7 +24,7 @@
 <meta property="og:description" content="java排查耗时代码的几种方式jstackjstack是jdk自带的堆栈跟踪工具 首先，我们用ps -ef|grep java命令列出正在运行的java进程 123# ps -ef|grep javaroot        33    32 67 21:52 tty2     00:00:10 java -jar xxx.jarroot       101    11  0 21:52 pts&#x2F;0">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-12T02:39:57.000Z">
-<meta property="article:modified_time" content="2024-02-12T02:40:33.008Z">
+<meta property="article:modified_time" content="2024-03-01T08:02:46.839Z">
 <meta property="article:author" content="晨cyan">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          405 字
+          497 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          4 分钟
+          5 分钟
         
       </span>
     
@@ -291,7 +291,14 @@
 
 <p>频繁地去RocksDB里get数据，导致性能过低</p>
 <hr>
-<h3 id="使用阿尔萨斯Arthas"><a href="#使用阿尔萨斯Arthas" class="headerlink" title="使用阿尔萨斯Arthas"></a>使用阿尔萨斯Arthas</h3>
+<h3 id="使用阿尔萨斯Arthas"><a href="#使用阿尔萨斯Arthas" class="headerlink" title="使用阿尔萨斯Arthas"></a>使用阿尔萨斯Arthas</h3><h1 id="一些节省耗时的操作"><a href="#一些节省耗时的操作" class="headerlink" title="一些节省耗时的操作"></a>一些节省耗时的操作</h1><ol>
+<li>能用单例就单例</li>
+<li><code>SimpleDateFormat</code>已经可以废弃了,直接<code>java.time.format.DateTimeFormatter</code></li>
+<li><code>Date.compare</code>,建议使用新的JavaDateApi,如<code>LocalDate</code>,<code>LocalDatetime</code>,<code>Durtaion</code>,<code>YearMonth</code>之类的,简单测试,发现,巨量调用以后,<code>LocalDatetime.compareTo</code>方法是<code>Date.compare</code>的1&#x2F;3</li>
+<li>复杂的正则,简单还好</li>
+<li>涉及到语法相关的,比如脚本编译之类的</li>
+</ol>
+
                 
               </div>
             
