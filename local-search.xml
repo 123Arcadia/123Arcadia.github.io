@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Mock框架记录</title>
+    <link href="/2024/03/03/Mock%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95/"/>
+    <url>/2024/03/03/Mock%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Mock框架"><a href="#Mock框架" class="headerlink" title="Mock框架"></a>Mock框架</h1><p>常见的开源Mock框架有<code>Mockito</code>、<code>JMock</code>与<code>JMockit</code>等，<code>JMockit</code>可以看作对JMock做了进一步的封装，非常好用，看完这篇文章你就可以将它玩的飞起。</p><h2 id="Mockito"><a href="#Mockito" class="headerlink" title="Mockito"></a>Mockito</h2><ul><li>中文文档：<a href="https://github.com/hehonghui/mockito-doc-zh#0">https://github.com/hehonghui/mockito-doc-zh#0</a></li><li>官网：<a href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html">https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html</a></li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>hu-tools总结</title>
     <link href="/2024/03/02/hu-tools%E6%80%BB%E7%BB%93/"/>
     <url>/2024/03/02/hu-tools%E6%80%BB%E7%BB%93/</url>
